@@ -1,0 +1,32 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <div class="mb-3">
+    <%= form.label :title, 'タイトル', class: 'form-label' %>
+    <%= form.text_field :title, class: 'form-control', placeholder: 'タイトル', required: true %>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <%= form.label :start_date, '開始日', class: 'form-label' %>
+      <%= form.date_field :start_date, class: 'form-control', required: true %>
+    </div>
+    <div class="col-md-6 mb-3">
+      <%= form.label :end_date, '終了日', class: 'form-label' %>
+      <%= form.date_field :end_date, class: 'form-control', required: true %>
+    </div>
+  </div>
+
+  <div class="form-check mb-3">
+    <%= form.check_box :all_day, class: 'form-check-input' %>
+    <%= form.label :all_day, '終日の場合はチェックを入れます', class: 'form-check-label' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :memo, 'スケジュールメモ', class: 'form-label' %>
+    <%= form.text_area :memo, class: 'form-control', placeholder: 'メモを入力する', rows: 4 %>
+  </div>
+
+  <div class="d-flex justify-content-between">
+    <%= link_to 'キャンセル', posts_path, class: 'btn btn-secondary' %>
+    <%= form.submit '保存', class: 'btn btn-primary' %>
+  </div>
+<% end %>
