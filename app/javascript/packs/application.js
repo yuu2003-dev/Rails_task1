@@ -11,8 +11,3 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-<<<<<<< HEAD
-
-
-=======
->>>>>>> f84748e03b62e68202098e0475096e77df52afc0
